@@ -1,3 +1,4 @@
+import TodoList from "./components/TodoList.jsx";
 import NewTodo from "./components/NewTodo.jsx";
 import { useState } from "react";
 
@@ -14,6 +15,7 @@ const App = () => {
     <>
       <h1>To-do App</h1>
       <NewTodo addTodo={addTodo} />
+      <TodoList todos={todos} />
     </>
   );
 };
