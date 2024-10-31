@@ -3,14 +3,14 @@ import { useState } from "react";
 const NewTodo = (props) => {
   const [newTodo, setNewTodo] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    props.addTodo("Hey, we're adding a new todo mate!");
-    console.log("Creating a new to-do...");
-  };
-
   const handleChangeTodo = (event) => {
     setNewTodo(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.addTodo(newTodo);
+    setNewTodo(``);
   };
 
   return (
@@ -20,8 +20,8 @@ const NewTodo = (props) => {
         id="todoInput"
         type="text"
         name="todo"
-        value={newTodo}
         onChange={handleChangeTodo}
+        value={newTodo}
       />
       <button type="submit">Create to-do</button>
     </form>

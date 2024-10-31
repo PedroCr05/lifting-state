@@ -1,8 +1,13 @@
 import NewTodo from "./components/NewTodo.jsx";
+import { useState } from "react";
 
 const App = () => {
+  const [todos, setTodos] = useState([]);
+
   const addTodo = (newTodo) => {
-    console.log(newTodo);
+    const updatedTodos = [...todos, newTodo];
+    setTodos(updatedTodos);
+    console.log(updatedTodos);
   };
 
   return (
